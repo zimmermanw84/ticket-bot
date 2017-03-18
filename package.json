@@ -1,0 +1,17 @@
+{
+  "name": "ticket-bot",
+  "version": "1.0.0",
+  "description": "Mention github ticket in chat and returns description of ticket.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Walt Zimmerman",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "console-stamp": "^0.2.5",
+    "express": "^4.15.2",
+    "request": "^2.81.0"
+  }
+}
