@@ -13,6 +13,9 @@ app.use bodyParser.urlencoded extended: true
 # logger
 require('console-stamp')(console, pattern: "dd/mm/yyyy HH:MM:ss.l")
 
+# naive auth
+app.use require "./lib/auth"
+
 # log reqests
 app.use (req, res, next) ->
   console.log "[#{req.method}] - Host: #{req.headers.host}"
