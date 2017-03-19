@@ -2,9 +2,10 @@
   "name": "ticket-bot",
   "version": "1.0.0",
   "description": "Mention github ticket in chat and returns description of ticket.",
-  "main": "app.js",
+  "main": "app.coffee",
   "scripts": {
     "start": "pm2 start server.coffee --watch --name='ticket-bot'",
+    "stop": "pm2 delete ticket-bot",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Walt Zimmerman",
