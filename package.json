@@ -2,7 +2,7 @@
   "name": "ticket-bot",
   "version": "1.0.0",
   "description": "Mention github ticket in chat and returns description of ticket.",
-  "main": "app.coffee",
+  "main": "server.coffee",
   "scripts": {
     "start": "pm2 start server.coffee --watch --name='ticket-bot'",
     "stop": "pm2 delete ticket-bot",
@@ -13,6 +13,7 @@
   "dependencies": {
     "bluebird": "^3.5.0",
     "body-parser": "^1.17.1",
+    "coffee-script": "^1.12.4",
     "console-stamp": "^0.2.5",
     "express": "^4.15.2",
     "request": "^2.81.0",
