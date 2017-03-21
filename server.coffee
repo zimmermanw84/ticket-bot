@@ -30,10 +30,10 @@ app.use (req, res, next) ->
   err.status = 404
   next err
 
-# error handler
+# sends out dirty error right to slack output XD
 app.use (err, req, res, next) ->
   res.status = err.status or 500
-  res.json error: err.message
+  res.json text: err.message
 
 app.listen PORT, (req, res, next) ->
   console.log "Ticket Bot running on port #{PORT}"

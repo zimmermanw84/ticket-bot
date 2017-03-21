@@ -1,17 +1,15 @@
 # github service
 rq = require "request-promise"
-Promise = require "bluebird"
 settings = require "../config/settings"
 
 HOST = settings.GH_API_HOST
-ISSUE_URI = settings.GH_ISSUE_URI
+ORG = settings.ORG
 AUTH_TOKEN = settings.GH_OAUTH_TOKEN
-ENDPOINT = HOST + ISSUE_URI
 
 # Get GH issue
-getIssue = (issueNum) ->
-  if not issueNum
-    Promise.reject new Error "Invalid Issue Number"
+getIssue = (issueNum, repo) ->
+  ENDPOINT = HOST + "/repos/#{ORG}/#{repo}/issues"
+
   options=
     headers:
       'User-Agent': 'ticket-bot'

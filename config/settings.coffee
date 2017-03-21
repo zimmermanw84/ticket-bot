@@ -6,7 +6,6 @@ ORG = process.env.ORGANIZATION
 REPO = process.env.REPO
 
 GH_API_HOST = "https://api.github.com"
-GH_ISSUE_URI = "/repos/#{ORG}/#{REPO}/issues"
 
 # simple validations
 unless SLACK_VERIFICATION_TOKEN and GH_OAUTH_TOKEN and ORG and REPO
@@ -16,4 +15,5 @@ module.exports =
   SLACK_VERIFICATION_TOKEN: SLACK_VERIFICATION_TOKEN
   GH_OAUTH_TOKEN: GH_OAUTH_TOKEN
   GH_API_HOST: GH_API_HOST
-  GH_ISSUE_URI: GH_ISSUE_URI
+  ORG: ORG
+  REPO: REPO
