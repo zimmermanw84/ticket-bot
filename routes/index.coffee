@@ -13,12 +13,10 @@ router.post "/slack/test", (req, res, next) ->
 
 router.post "/slack/ticket", (req, res, next) ->
   textArgs = commandParser.parse req.body.text
-  issueNum = textArgs.issueNum
-  repo = textArgs.repo
 
-  githubApi.getIssue issueNum, repo
-  .then (issue) ->
-    res.json text: issue, response_type: "in_channel"
+  githubApi.getData textArgs
+  .then (data) ->
+    res.json text: data, response_type: "in_channel"
   .catch (err) ->
     console.error err
     if err.statusCode is 404
